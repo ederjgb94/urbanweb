@@ -36,6 +36,9 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_svg: ^1.0.3
   delayed_display: ^2.0.0
+  font_awesome_flutter: ^9.2.0
+  auto_size_text: ^3.0.0
+  smooth_page_indicator: ^1.0.0+2
 
 dev_dependencies:
   flutter_test:
@@ -67,6 +70,16 @@ flutter:
     - images/talleres/herreria/imagenes/
     - images/talleres/pintura/imagenes/
     - images/menu-talleres/
+    - images/menu-talleres/movil/
+    - images/talleresm/
+    - images/talleresm/canceleria/
+    - images/talleresm/carpinteria/
+    - images/talleresm/herreria/
+    - images/talleresm/pintura/
+    - images/pie-pagina/
+    - images/contacto/
+    - images/contacto/iconos/
+    - images/contacto/imagen/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -125,4 +138,9 @@ flutter:
         
     - family: Raleway
       fonts:
-        - asset: fonts/Raleway/Raleway-VariableFont_wght.ttf
+        - asset: fonts/Raleway/Raleway-Regular.ttf
+          weight: 400
+        - asset: fonts/Raleway/Raleway-Light.ttf
+          weight: 300
+        - asset: fonts/Raleway/Raleway-Thin.ttf
+          weight: 100
