@@ -8,6 +8,7 @@ import 'package:delayed_display/delayed_display.dart';
 import 'package:urbanweb/ContactPage.dart';
 import 'package:urbanweb/buttonNavBar.dart';
 import 'package:urbanweb/movil.dart';
+import 'package:urbanweb/portafolio_desktop.dart';
 import 'package:urbanweb/rlbutton.dart';
 import 'dart:html' as html;
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -18,7 +19,7 @@ void main() {
       statusBarColor: Colors.black, // this one for android
       statusBarBrightness: Brightness.light // this one for iOS
       ));
-  runApp(const MyApp());
+  runApp(LiveGridExample());
 }
 
 class MyApp extends StatelessWidget {
@@ -1125,7 +1126,9 @@ class _MyHomePageState extends State<MyHomePage> {
         child: LayoutBuilder(
           builder: (context, constraints) {
             return constraints.maxWidth > 1200
-                ? _desktop(constraints)
+                ? _desktop(constraints)++
+
+                
                 : MovilApp(constraints: constraints);
           },
         ),

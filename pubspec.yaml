@@ -39,6 +39,7 @@ dependencies:
   font_awesome_flutter: ^9.2.0
   auto_size_text: ^3.0.0
   smooth_page_indicator: ^1.0.0+2
+  auto_animated: ^3.0.1
 
 dev_dependencies:
   flutter_test:
