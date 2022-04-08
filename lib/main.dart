@@ -1126,9 +1126,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: LayoutBuilder(
           builder: (context, constraints) {
             return constraints.maxWidth > 1200
-                ? _desktop(constraints)++
-
-                
+                ? _desktop(constraints)
                 : MovilApp(constraints: constraints);
           },
         ),

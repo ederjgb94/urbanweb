@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:auto_animated/auto_animated.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -9,16 +11,22 @@ class LiveGridExample extends StatefulWidget {
 
 class _LiveGridExampleState extends State<LiveGridExample> {
   int itemsCount = 20;
+  List<String> s = [
+    'images/test/3.jpg',
+    'images/test/casa_ene_slide2.jpg',
+    'images/test/fe27f2a7ef429f634c204443b251e441.jpg',
+    'images/test/Screen-Shot-2020-01-10-at-6.45.39-PM.jpg',
+  ];
   @override
   void initState() {
-    Future.delayed(Duration(milliseconds: 500) * 5, () {
-      if (!mounted) {
-        return;
-      }
-      setState(() {
-        itemsCount += 10;
-      });
-    });
+    // Future.delayed(Duration(milliseconds: 500) * 5, () {
+    //   if (!mounted) {
+    //     return;
+    //   }
+    //   setState(() {
+    //     itemsCount += 10;
+    //   });
+    // });
     super.initState();
   }
 
@@ -26,20 +34,32 @@ class _LiveGridExampleState extends State<LiveGridExample> {
   Widget build(BuildContext context) => MaterialApp(
         home: Scaffold(
           body: SafeArea(
-            child: LiveGrid(
-              padding: EdgeInsets.all(16),
-              showItemInterval: Duration(milliseconds: 50),
-              showItemDuration: Duration(milliseconds: 150),
-              visibleFraction: 0.001,
-              itemCount: itemsCount,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3,
-                crossAxisSpacing: 16,
-                mainAxisSpacing: 16,
-              ),
-              itemBuilder: animationItemBuilder((index) => Container(
-                    child: Text(index.toString()),
-                  )),
+            child: Stack(
+              children: [
+                LiveGrid(
+                  padding: EdgeInsets.all(16),
+                  showItemInterval: Duration(milliseconds: 100),
+                  showItemDuration: Duration(milliseconds: 1000),
+                  visibleFraction: 0.001,
+                  itemCount: itemsCount,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 16,
+                    mainAxisSpacing: 16,
+                  ),
+                  itemBuilder: animationItemBuilder(
+                    (index) => Container(
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage(
+                              s[index % 4],
+                            ),
+                            fit: BoxFit.cover),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
         ),
